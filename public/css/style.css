@@ -9,3 +9,13 @@
 .card-header-title small.is-danger {
   color: hsl(348, 100%, 61%);
 }
+
+form[action="/paid"] button {
+  border: none;
+  outline: none;
+  box-shadow: none;
+  background: none;
+  font-size: 1rem;
+  padding: 0;
+  margin: 0;
+}

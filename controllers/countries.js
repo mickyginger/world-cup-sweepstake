@@ -67,7 +67,17 @@ function reset(req, res) {
     .then(() => res.redirect('/admin'));
 }
 
+function paid(req, res) {
+  User.findById(req.body.userId)
+    .then(user => {
+      user.paid = !user.paid;
+      return user.save();
+    })
+    .then(() => res.redirect('/admin'));
+}
+
 module.exports = {
   select,
-  reset
+  reset,
+  paid
 };

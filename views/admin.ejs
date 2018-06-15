@@ -11,7 +11,12 @@
       <tr>
         <td><%= user.name %></td>
         <td><%= user.country.flag %></td>
-        <td><%= user.paid ? '👍' : '👎'%></td>
+        <td>
+          <form method="post" action="/paid">
+            <input type="hidden" name="userId" value="<%= user._id %>">
+            <button><%= user.paid ? '👍' : '👎'%></button>
+          </form>
+        </td>
       </tr>
     <% }) %>
   </tbody>
