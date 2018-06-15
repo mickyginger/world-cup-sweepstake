@@ -1,10 +1,34 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" class="has-navbar-fixed-top">
   <head>
     <meta charset="utf-8">
     <title>🇷🇺 WORLD CUP 2018 🇷🇺</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
+    <link rel="stylesheet" href="/css/style.css">
   </head>
   <body>
-    <%- body %>
+    <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="/">
+          <h1 class="title is-4">🇷🇺 WORLD CUP 2018 SWEEPSTAKE 🇷🇺</h1>
+        </a>
+
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+      <div class="navbar-menu">
+        <div class="navbar-end">
+          <a class="navbar-item" href="/register">Register</a>
+        </div>
+      </div>
+    </nav>
+    <section class="section">
+      <div class="container">
+        <%- body %>
+      </div>
+    </section>
   </body>
 </html>

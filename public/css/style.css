@@ -1,0 +1,11 @@
+.card-header-title {
+  justify-content: space-between;
+}
+
+.card-header-title small {
+  font-weight: normal;
+}
+
+.card-header-title small.is-danger {
+  color: hsl(348, 100%, 61%);
+}

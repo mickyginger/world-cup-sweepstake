@@ -1,1 +1,37 @@
-<h1>🇷🇺 WORLD CUP 2018 SWEEPSTAKE 🇷🇺</h1>
+<% if(selectionMade) { %>
+
+  <ul class="columns is-multiline">
+    <% users.forEach(user => { %>
+      <li class="column is-one-quarter">
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-header-title">
+              <%= user.name %>
+
+              <% if(user.paid) { %>
+                <small>Paid</small>
+              <% } else { %>
+                <small class="is-danger">Not paid</small>
+              <% } %>
+            </h3>
+          </div>
+          <div class="card-content">
+            <h2 class="title is-1"><%= user.country.flag %></h2>
+            <h3 class="subtitle is-4"><%= user.country.name %> (<%= user.country.rank %>)</h3>
+          </div>
+        </div>
+      </li>
+    <% }) %>
+  </ul>
+<% } else { %>
+
+  <h1 class="title is-1">Selection will be made on Monday 18th June at 09:00am</h1>
+
+  <p>Please register to take part</p>
+  <button class="button is-primary">Register</button>
+
+  <form method="POST" action="/selection">
+    <button>Make Selection</button>
+  </form>
+
+<% } %>
