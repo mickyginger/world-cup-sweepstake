@@ -15,6 +15,12 @@ schema
     this._passwordConfirmation = passwordConfirmation;
   });
 
+schema.pre('validate', function checkPassword(next) {
+  if(this.isModified('password') && this._passwordConfirmation !== this.password) this.invalidate('passwordConfirmation', 'does not match');
+  next();
+});
+
+
 schema.pre('save', function hashPassword(next) {
   if(this.isModified('password')) {
     this.password = bcrypt.hashSync(this.password, bcrypt.genSaltSync(8));
