@@ -4,6 +4,7 @@ const countries = require('../controllers/countries');
 const statics = require('../controllers/statics');
 
 router.get('/', statics.home);
+router.get('/admin', statics.admin);
 
 router.post('/selection', countries.select);
 

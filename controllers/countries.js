@@ -50,7 +50,7 @@ function select(req, res) {
         return user.save();
       }));
     })
-    .then(() => res.redirect('/'));
+    .then(() => res.redirect('/admin'));
 }
 
 module.exports = {

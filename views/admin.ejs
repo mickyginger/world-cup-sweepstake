@@ -1,0 +1,22 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Country</th>
+      <th>Paid</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% users.forEach(user => { %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user.country.flag %></td>
+        <td><%= user.paid ? '👍' : '👎'%></td>
+      </tr>
+    <% }) %>
+  </tbody>
+</table>
+
+<form method="POST" action="/selection">
+  <button class="button is-primary">Make Selection</button>
+</form>
