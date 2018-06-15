@@ -4,6 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
+    "bcrypt": "^2.0.1",
     "bluebird": "^3.5.1",
     "ejs": "^2.6.1",
     "express": "^4.16.3",
