@@ -9,7 +9,6 @@ mongoose.Promise = require('bluebird');
 
 mongoose.connect(dbURI);
 
-
 app.set('view engine', 'ejs');
 app.set('views', `${__dirname}/views`);
 
