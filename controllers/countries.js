@@ -53,6 +53,18 @@ function select(req, res) {
     .then(() => res.redirect('/admin'));
 }
 
+function reset(req, res) {
+  User.find()
+    .then(users => {
+      return Promise.all(users.map(user => {
+        user.country = null;
+        return user.save();
+      }));
+    })
+    .then(() => res.redirect('/admin'));
+}
+
 module.exports = {
-  select
+  select,
+  reset
 };
