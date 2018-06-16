@@ -16,4 +16,6 @@ router.route('/register')
   .get(registrations.new)
   .post(registrations.create);
 
+router.post('/registrations/:id/delete', registrations.delete);
+
 module.exports = router;

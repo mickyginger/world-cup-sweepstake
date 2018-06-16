@@ -4,6 +4,7 @@
       <th>Name</th>
       <th>Country</th>
       <th>Paid</th>
+      <ht></ht>
     </tr>
   </thead>
   <tbody>
@@ -15,6 +16,11 @@
           <form method="post" action="/paid">
             <input type="hidden" name="userId" value="<%= user._id %>">
             <button><%= user.paid ? '👍' : '👎'%></button>
+          </form>
+        </td>
+        <td>
+          <form method="post" action="/registrations/<%= user._id %>/delete">
+            <button class="delete">&times;</button>
           </form>
         </td>
       </tr>
