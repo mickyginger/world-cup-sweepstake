@@ -1,7 +1,7 @@
 const User = require('../models/user');
 const Promise = require('bluebird');
 
-function select(req, res) {
+function select(req, res, next) {
 
   let countries = [
     { name: 'Germany', flag: '🇩🇪', rank: 1 },
@@ -53,10 +53,15 @@ function select(req, res) {
         return user.save();
       }));
     })
-    .then(() => res.redirect('/admin'));
+    .then(() => res.redirect('/admin'))
+    .catch(err => {
+      req.flash('danger', 'Snap! Something wen\'t wrong. Please try again.');
+      res.redirect('/admin');
+      next(err);
+    });
 }
 
-function reset(req, res) {
+function reset(req, res, next) {
   User.find()
     .then(users => {
       return Promise.all(users.map(user => {
@@ -64,16 +69,26 @@ function reset(req, res) {
         return user.save();
       }));
     })
-    .then(() => res.redirect('/admin'));
+    .then(() => res.redirect('/admin'))
+    .catch(err => {
+      req.flash('danger', 'Snap! Something wen\'t wrong. Please try again.');
+      res.redirect('/admin');
+      next(err);
+    });
 }
 
-function paid(req, res) {
+function paid(req, res, next) {
   User.findById(req.body.userId)
     .then(user => {
       user.paid = !user.paid;
       return user.save();
     })
-    .then(() => res.redirect('/admin'));
+    .then(() => res.redirect('/admin'))
+    .catch(err => {
+      req.flash('danger', 'Snap! Something wen\'t wrong. Please try again.');
+      res.redirect('/admin');
+      next(err);
+    });
 }
 
 module.exports = {

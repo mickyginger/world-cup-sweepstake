@@ -23,3 +23,7 @@ form[action="/paid"] button {
   padding: 0;
   margin: 0;
 }
+
+.table td, .table th {
+  vertical-align: middle;
+}
