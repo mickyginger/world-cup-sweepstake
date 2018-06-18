@@ -23,7 +23,7 @@
       </div>
       <div class="navbar-menu">
         <div class="navbar-end">
-          <% if(!locals.isAuthenticated) { %><a class="navbar-item" href="/register">Register</a><% } %>
+          <!-- <% if(!locals.isAuthenticated) { %><a class="navbar-item" href="/register">Register</a><% } %> -->
           <% if(locals.isAuthenticated) { %><a class="navbar-item" href="/admin">Admin</a><% } %>
           <% if(locals.isAuthenticated) { %><a class="navbar-item" href="/logout">Logout</a><% } %>
         </div>

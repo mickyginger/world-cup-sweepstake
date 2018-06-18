@@ -1,20 +1,24 @@
 const User = require('../models/user');
 
 function newRoute(req, res) {
-  res.render('register');
+  // res.render('register');
+  req.flash('danger', 'Registration is now closed.');
+  res.redirect('/');
 }
 
-function createRoute(req, res, next) {
-  User.create(req.body)
-    .then(() => {
-      req.flash('success', 'Thanks for registering.');
-      res.redirect('/');
-    })
-    .catch(err => {
-      req.flash('danger', 'Snap! Something wen\'t wrong. Please try again.');
-      res.redirect('/');
-      next(err);
-    });
+function createRoute(req, res) {
+  // User.create(req.body)
+  //   .then(() => {
+  //     req.flash('success', 'Thanks for registering.');
+  //     res.redirect('/');
+  //   })
+  //   .catch(err => {
+  //     req.flash('danger', 'Snap! Something wen\'t wrong. Please try again.');
+  //     res.redirect('/');
+  //     next(err);
+  //   });
+  req.flash('danger', 'Registration is now closed.');
+  res.redirect('/');
 }
 
 function deleteRoute(req, res, next) {
