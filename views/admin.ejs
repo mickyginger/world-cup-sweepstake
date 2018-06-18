@@ -1,0 +1,31 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Country</th>
+      <th>Paid</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% users.forEach(user => { %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user.country.flag %></td>
+        <td>
+          <form method="post" action="/paid">
+            <input type="hidden" name="userId" value="<%= user._id %>">
+            <button><%= user.paid ? '👍' : '👎'%></button>
+          </form>
+        </td>
+      </tr>
+    <% }) %>
+  </tbody>
+</table>
+
+<form method="POST" action="/select">
+  <button class="button is-primary">Make Selection</button>
+</form>
+
+<form method="POST" action="/reset">
+  <button class="button is-danger">Reset</button>
+</form>
