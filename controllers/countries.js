@@ -18,7 +18,7 @@ function select(req, res, next) {
     { name: 'England', flag: '🏴󠁧󠁢󠁥󠁮󠁧󠁿', rank: 12 },
     { name: 'Uruguay', flag: '🇺🇾', rank: 14 },
     { name: 'Mexico', flag: '🇲🇽', rank: 15 },
-    { name: 'Columnbia', flag: '🇨🇴', rank: 16 },
+    { name: 'Colombia', flag: '🇨🇴', rank: 16 },
     { name: 'Croatia', flag: '🇭🇷', rank: 20 },
     { name: 'Tunisia', flag: '🇹🇳', rank: 21 },
     { name: 'Iceland', flag: '🇮🇸', rank: 22 },
