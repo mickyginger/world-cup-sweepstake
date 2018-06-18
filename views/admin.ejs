@@ -11,7 +11,7 @@
     <% users.forEach(user => { %>
       <tr>
         <td><%= user.name %></td>
-        <td><%= user.country.flag %></td>
+        <td class="is-flag"><%= user.country.flag %></td>
         <td>
           <form method="post" action="/paid">
             <input type="hidden" name="userId" value="<%= user._id %>">
