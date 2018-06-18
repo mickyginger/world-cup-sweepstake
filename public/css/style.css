@@ -1,3 +1,7 @@
+.is-flag {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+
 .card-header-title {
   justify-content: space-between;
 }
