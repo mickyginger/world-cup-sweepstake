@@ -11,6 +11,7 @@ function home(req, res) {
 
 function admin(req, res) {
   User.find()
+    .sort({ paid: 1, name: 1 })
     .then(users => res.render('admin', { users }));
 }
 
